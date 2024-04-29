@@ -56,22 +56,22 @@ body{
     position: sticky;
     top: 0;
     z-index: 3;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    
+    margin-top: 1%;
+    margin-bottom: 1%;
     
 }
 
+
 #navbar ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding:1%;
+    /*margin: 1%;*/
     display: flex; /* Ustawienie elementów na poziomie */
     justify-content: center; /* Wyrównanie do środka */
 }
 
 #navbar ul li {
-    margin-right: 20px; /* Odstęp między pozycjami menu */
+    margin-right: 1%; /* Odstęp między pozycjami menu */
 }
 
 #navbar ul li:last-child {
@@ -85,7 +85,7 @@ body{
 }
 
 #navbar ul li a:hover {
-    color: blue;
+    color: rgba(0, 255, 247, 0.692);
 }
 
 
