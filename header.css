@@ -1,0 +1,93 @@
+ header {
+            background-color: #282828; 
+            padding: 20px 0;
+            /*position: fixed;*/
+        }
+
+        .header-content {
+            position: relative;
+            background: url('header_background.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 50px 10%;
+        }
+
+        .header-content img {
+            max-width: 100%; /* Zapobiega przekraczaniu szerokości obrazka */
+        }
+
+        .header-content h1 {
+            position: absolute; 
+            top: 40%; /* Wyśrodkowanie tekstu w pionie */
+            left: 50%; /* Wyśrodkowanie tekstu w poziomie */
+            transform: translate(-50%, -50%); /* Wycentrowanie tekstu na obrazku */
+            margin: 0; 
+            background: none;
+        }
+
+
+
+        .rounded-circle {
+            position: relative;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+         .rounded-circle img {
+            max-width: 100%; /* Prevents the image from exceeding its container */
+            border-radius: 100%;
+        }
+
+
+        
+        
+        
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: #282828;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: bottom;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+
+        .recent-work {
+            background: url('header_background.jpg') center/cover no-repeat;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .recent-work h2{
+            color: white;
+            background: url('header_background.jpg') center/cover no-repeat;
+        }
+        .recent-work .image-item col-md-4{
+            background-color: white;
+        }
+
+        .recent-work .image-container row{
+            background-color: white;
+
+        }
+        .text-content{
+            font: Verdana;
+            
+        }

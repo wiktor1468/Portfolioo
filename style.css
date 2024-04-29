@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+* {
+   background-color: #282828; 
+   text-align: center;
+   color: white
+   
+}
+body{
+    font-family: 'Arial', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#imie{
+    font-size: 30px;
+    text-align: center;
+}
+
+/*recent work section*/
+.recent-work {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.recent-work h2 {
+    margin-bottom: 20px; /* Dodatkowy odstęp pod tytułem */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-item {
+    text-align: center; /* Wyśrodkowanie obrazka i napisu */
+}
+
+.image-item img {
+    max-width: 90%;
+}
+
+.image-item p {
+    margin-top: 20px; /* Dodatkowy odstęp między obrazkiem a napisem */
+}
+.image-item p a:hover {
+    color: blue;
+}
+
+
+
+/*navbar*/
+
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    margin-bottom: 2px;
+    
+    
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Ustawienie elementów na poziomie */
+    justify-content: center; /* Wyrównanie do środka */
+}
+
+#navbar ul li {
+    margin-right: 20px; /* Odstęp między pozycjami menu */
+}
+
+#navbar ul li:last-child {
+    margin-right: 0; /* Usunięcie odstępu z ostatniej pozycji */
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+#navbar ul li a:hover {
+    color: blue;
+}
+
+
+
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+p{
+    font-size: 16px;
+    
+}
+
+#portfolio {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+ul,
+ol{
+    list-style-type:none;
+    text-align: center;
+    padding-left: 0;
+    list-style-position: outside; /*position of the list-item markers*/
+}
+
+#ol_portfolio{
+    font-family: 'Montserrat', sans-serif;
+}
+
+table{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    text-align: left;
+}
+
+#cena{
+    text-align: right;
+}
+
+
+
+
+/*Formularz kontaktowy*/
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    
+}
+
+#contactForm div {
+    margin-bottom: 15px;
+    display: flex;  
+    align-items: left;
+    flex-grow:auto;
+    
+}
+
+#contactForm label {
+    width: 2px;
+    text-align: left; /* Wyrownanie tekstu do lewej strony */
+    align-items: left;
+}
+
+
+#zalacznik {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#contactForm form input[type="text"],
+#contactForm form input[type="tel"],
+#contactForm form input[type="email"],
+#contactForm form textarea,
+#contactForm form button {
+    flex: 1;
+}
+
+
+footer p {
+    text-align: left;
+}

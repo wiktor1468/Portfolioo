@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Portfolio</title>
+    <!-- Odwołanie do CSS -->
+    <link href='style.css' rel='stylesheet'>
+    <link href='header.css' rel='stylesheet'>
+   
+</head>
+
+<body>
+
+    <nav id="navbar" class="container navbar ">
+        <ul class="nav justify-content-center">
+            <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">featured</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/">Mój GitHub</a></li>
+            <li class="nav-item"><a class="nav-link" href="kontakt/index.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header>
+       
+
+        <div class="header-content container">
+            
+            <h1 id="imie"> Wiktor Łabno - portfolio</h1>
+            
+        </div>
+
+        
+
+
+    </header>
+
+    <div class="rounded-circle">
+        <img src="face.jpg" class="img-fluid " alt="Face">
+    </div>
+    <div class="text-content">
+        <p>I’m interested in Computer Science and I’m willing to take new advantage </p>
+    </div>
+
+    <main class="container">
+        <div class="recent-work">
+            <h2>My Recent Work</h2>
+            <div class="image-container row">
+                <div class="image-item col-md-4">
+                    <img src="systemRekomendacji.png" class="img-fluid" alt="Image ">
+                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
+                </div>
+                <div class="image-item col-md-4">
+                    <img src="systemRekomendacji.png" class="img-fluid" alt="Image ">
+                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
+                </div>
+                <div class="image-item col-md-4">
+                    <img src="systemRekomendacji.png" class="img-fluid" alt="Image ">
+                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
+                </div>
+            </div>
+        </div>
+
+      
+        
+
+        <section id="contactForm">
+            <h2>Kontakt</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="imie">Imię</label>
+                    <input type="text" id="imie" name="imie" class="form-control" placeholder="Imię" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon</label>
+                    <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="Telefon" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="zalacznik">Załącznik</label>
+                    <input type="file" id="zalacznik" name="zalacznik" class="form-control-file">
+                </div>
+                <div class="form-group">
+                    <label for="tresc">Treść</label>
+                    <textarea id="tresc" name="tresc" class="form-control" rows="4" placeholder="Wpisz treść wiadomości" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Wyślij</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wiktor Łabno</p>
+    </footer>
+
+    
+</body>
+
+</html>
