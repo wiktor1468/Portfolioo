@@ -45,7 +45,7 @@ body{
     margin-top: 20px; /* Dodatkowy odstęp między obrazkiem a napisem */
 }
 .image-item p a:hover {
-    color: blue;
+    color: rgba(0, 255, 247, 0.692);
 }
 
 
@@ -91,6 +91,16 @@ body{
 .github-icon {
     width: 24px; /* Adjust the width as needed */
     height: 24px; /* Adjust the height as needed */
+    
+}
+.gmail-icon {
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+    background: none;
+    color: none;
+    background-color: #282828;
+    
+
     
 }
 
