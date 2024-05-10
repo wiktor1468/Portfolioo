@@ -46,6 +46,7 @@ body{
 }
 .image-item p a:hover {
     color: rgba(0, 255, 247, 0.692);
+    text-decoration: none;
 }
 
 
@@ -97,7 +98,10 @@ body{
     justify-content: end;
      /* Restore margin for second last, third last, and fourth last items */
     
-    
+ 
+.nav-link:hover{
+    color: rgba(0, 255, 247, 0.692);
+}
     
 .github-icon {
     width: 24px; /* Adjust the width as needed */
@@ -128,6 +132,7 @@ h2 {
 }
 p{
     font-size: 16px;
+    margin-bottom:0;
     
 }
 
