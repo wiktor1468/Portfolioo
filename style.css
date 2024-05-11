@@ -12,9 +12,7 @@ body{
     background-color: #282828;
 }
 
-p{
-    margin-bottom: 0%;
-}
+
 #des{
     margin-bottom: 0%;
 }
@@ -22,6 +20,10 @@ p{
 #imie{
     font-size: 30px;
     text-align: center;
+}
+
+#arrow_down{
+    outline: none;
 }
 
 /*recent work section*/
