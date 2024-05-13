@@ -9,11 +9,21 @@
 }
 body{
     font-family: 'Arial', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #282828;
+}
+
+
+#des{
+    margin-bottom: 0%;
 }
 
 #imie{
     font-size: 30px;
     text-align: center;
+}
+
+#arrow_down{
+    outline: none;
 }
 
 /*recent work section*/
@@ -46,6 +56,7 @@ body{
 }
 .image-item p a:hover {
     color: rgba(0, 255, 247, 0.692);
+    text-decoration: none;
 }
 
 
@@ -68,16 +79,17 @@ body{
     padding: 0;
     margin: 0;
     display: flex; /* Ustawienie elementów na poziomie */
-    justify-content: center; /* Wyrównanie do środka */
+   /* justify-content: center; /* Wyrównanie do środka */
 }
 
 #navbar ul li {
-    margin-right: 1%; /* Odstęp między pozycjami menu */
+    margin-right: 2%; /* Odstęp między pozycjami menu */
 }
 
-#navbar ul li:last-child {
-    margin-right: 0; /* Usunięcie odstępu z ostatniej pozycji */
+/*#navbar ul li:last-child {
+    margin-right: 0; /* Usunięcie odstępu z ostatniej pozycji 
 }
+*/
 
 #navbar ul li a {
     text-decoration: none;
@@ -88,6 +100,19 @@ body{
 #navbar ul li a:hover {
     color: rgba(0, 255, 247, 0.692);
 }
+/*
+#navbar ul li:nth-last-child(2),
+#navbar ul li:nth-last-child(3),
+#navbar ul li:last-child {
+    display: grid;
+    justify-content: end;
+     /* Restore margin for second last, third last, and fourth last items */
+    
+ 
+.nav-link:hover{
+    color: rgba(0, 255, 247, 0.692);
+}
+    
 .github-icon {
     width: 24px; /* Adjust the width as needed */
     height: 24px; /* Adjust the height as needed */
@@ -117,6 +142,7 @@ h2 {
 }
 p{
     font-size: 16px;
+    margin-bottom:0;
     
 }
 

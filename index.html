@@ -5,34 +5,70 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Portfolio</title>
-    <!-- Odwołanie do CSS -->
+    <!-- Odwołanie do CSS i bootsrapa-->
     <link href='style.css' rel='stylesheet'>
     <link href='header.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <style>
-        .rotate {
-            transform: rotate(180deg);
-            transition: transform 0.3s ease;
-        }
-    </style>
+    <script>
+         function moveDown() {
+         // Get the height of the viewport
+         var windowHeight = window.innerHeight*0.86;
+        // Scroll down by the height of the viewport
+        window.scrollBy({ top: windowHeight, behavior: 'smooth' });
+         }
+    </script>
    
 </head>
 
 <body>
 
-    <nav id="navbar" class="container-fluid navbar ">
-        <ul class="nav justify-content-center">
-            <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
-            <li class="nav-item"><a class="nav-link" href="#skills">featured</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://github.com/wiktor1468"><img src="assets/github-mark-white.png" class="img-fluid github-icon"></a></li>
-            <li class="nav-item"><a class="nav-link" href="mailto:wiktorhar@gmail.com"><img src="assets/gmail-icon-png.png" class="img-fluid rounded-circle gmail-icon"></a></li>
-            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/wiktor-labno-0018082a4/?trk=opento_sprofile_goalscard"><img src="assets/circle-linkedin.webp"  class="img-fluid github-icon"></a></li>
-        </ul>
+    <nav id="navbar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="nav-item">
+                        <a class="nav-link" href="#skills">LOGO</a>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="row gx-3 ">
+                        <div class="nav-item"> <a class="nav-link" href="#about">About</a></div>
+                        <div class="nav-item"> <a class="nav-link" href="#skills">Featured</a></div>
+                        <div class="nav-item"> <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row gx-3 justify-content-end">
+                        <div class="nav-item">
+                            <a class="nav-link" href="https://github.com/wiktor1468">
+                                <img src="assets/github-mark-white.png" alt="GitHub" class="img-fluid github-icon">
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="mailto:wiktorhar@gmail.com">
+                                <img src="assets/gmail-icon-png.png" alt="Gmail" class="img-fluid rounded-circle gmail-icon">
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com/in/wiktor-labno-0018082a4/?trk=opento_sprofile_goalscard">
+                                <img src="assets/circle-linkedin.webp" alt="LinkedIn" class="img-fluid github-icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
+    
+
+
+    
 
     <header>
-        <div class="header-content container">
+        <div class="header-content container-fluid">
             
             <h1 id="imie"> Wiktor Łabno - portfolio</h1>     
         
@@ -43,24 +79,27 @@
     </header>
 
     
-    <div class="text-content">
-        <p>I’m interested in Computer Science and I’m willing to take new advantage </p>
+    <div class="text-content b-0">
+        <p id="des">I’m interested in Computer Science and I’m willing to take new advantage </p>
     </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
-      </svg>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <button id="arrow_down" onclick="moveDown()" title="Press to move down" class="border-0 h-50">
+                    <div class="container d-flex justify-content-center rounded-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle svg-container" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
 
-      <script>
-        document.getElementById("arrow-icon").addEventListener("click", function() {
-            // Get the height of the viewport
-            var windowHeight = window.innerHeight;
-            // Scroll down by the height of the viewport
-            window.scrollBy({ top: windowHeight, behavior: 'smooth' });
-        });
-    </script>
+      
 
-    <main class="container">
+    <main class="container-fluid">
         <div class="recent-work">
             <h2>My Recent Work</h2>
             <div class="image-container row">
