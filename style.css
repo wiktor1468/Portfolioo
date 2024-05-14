@@ -70,6 +70,7 @@ body{
     /*margin-top: 1% auto;
     margin-bottom: 1%;
     padding: 0;*/
+    padding: 0!important;
     
 }
 
@@ -100,32 +101,27 @@ body{
 #navbar ul li a:hover {
     color: rgba(0, 255, 247, 0.692);
 }
-/*
-#navbar ul li:nth-last-child(2),
-#navbar ul li:nth-last-child(3),
-#navbar ul li:last-child {
-    display: grid;
-    justify-content: end;
-     /* Restore margin for second last, third last, and fourth last items */
-    
+
  
 .nav-link:hover{
     color: rgba(0, 255, 247, 0.692);
 }
     
 .github-icon {
-    width: 24px; /* Adjust the width as needed */
-    height: 24px; /* Adjust the height as needed */
+    width: 24px; 
+    height: 24px; 
     
 }
 .gmail-icon {
-    width: 24px; /* Adjust the width as needed */
-    height: 24px; /* Adjust the height as needed */
+    width: 24px; 
+    height: 24px; 
     background: none;
     color: none;
     background-color: #282828;
-    
-
+}
+.logo-icon{
+    width: 58px;
+    height: 58px;
     
 }
 
