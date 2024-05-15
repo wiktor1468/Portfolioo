@@ -43,6 +43,10 @@
             
         }
 
+        .image-div{
+            background-color: transparent!important; /*to avoid strange bgcolor*/
+        }
+
 
         
         
