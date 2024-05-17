@@ -232,9 +232,6 @@ footer p {
 }
 
 
-
-/*arrow button */
-
-
-
-/*buttons*/
+form-group:focus{
+    border-color: antiquewhite;
+}

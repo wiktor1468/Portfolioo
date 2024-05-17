@@ -12,16 +12,7 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     
-    <script>
-         function moveDown() {
-         // Get the height of the viewport
-         var windowHeight = window.innerHeight*0.86;
-        // Scroll down by the height of the viewport
-        window.scrollBy({ top: windowHeight, behavior: 'smooth' });
-         }
-    </script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    
    
 </head>
 
@@ -71,65 +62,19 @@
         </div>
     </nav>
 
-
-    
-
-    <header>
-        <div class="header-content container-fluid">
-            
-            <h1 id="imie"> Wiktor Łabno - portfolio</h1>     
-        
-            <div class="rounded-circle image-div">
-                <img src="assets/face1to1.jpg" class="img-fluid" alt="Face">
-            </div>
+    <form>
+        <div class="form-group w-25 mx-auto ">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
-    </header>
-
-    
-    <div class="text-content b-0">
-        <p id="des">I’m interested in Computer Science and I’m willing to take new advantage </p>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-2">
-                <button id="arrow_down" onclick="moveDown()" title="Press to move down" class="border-0 h-50">
-                    <div class="container d-flex justify-content-center rounded-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle svg-container" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
-                        </svg>
-                    </div>
-                </button>
-            </div>
-        </div>
-    </div>
-
-      
-
-    <main class="container-fluid">
-        <div class="recent-work">
-            <h2>My Recent Work</h2>
-            <div class="image-container row">
-                <div class="image-item col-md-4">
-                    <img src="assets/systemRekomendacji.png" class="img-fluid" alt="Image ">
-                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
-                </div>
-                <div class="image-item col-md-4">
-                    <img src="assets/systemRekomendacji.png" class="img-fluid" alt="Image ">
-                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
-                </div>
-                <div class="image-item col-md-4">
-                    <img src="assets/systemRekomendacji.png" class="img-fluid" alt="Image ">
-                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
-                </div>
-            </div>
-        </div>
-
-      
+        <div class="form-group w-25 mx-auto">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <small id="emailHelp" class="form-text text-muted"><a class="nav-link" href="#signin">Sign in if you don't have an account</a></small>
+    </form>
 
-        
-    </main>
 
     <div class="container">
         <footer class="py-3 my-4">
@@ -145,6 +90,4 @@
         </footer>
       </div>
     
-</body>
-
-</html>
+</body></html>
