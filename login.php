@@ -63,7 +63,7 @@
         <form action="authenticate.php" method="post">
             <div class="form-group w-25 mx-auto">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username"  placeholder="username">
+                <input type="text" class="form-control" name="username" placeholder="Username">
             </div>
             <div class="form-group w-25 mx-auto">
                 <label for="password">Password</label>
@@ -71,10 +71,18 @@
             </div>
             <div class="w-25 mx-auto">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                
             </div>
         </form>
-        <small id="emailHelp" class="form-text text-muted"><a class="nav-link" href="#signin">Sign in if you don't have an account</a></small>
+        <small id="emailHelp" class="form-text text-muted">
+            <a class="nav-link" href="#signin">Sign in if you don't have an account</a>
+        </small>
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+            echo '<div class="alert alert-danger w-25 mx-auto mt-3">' . $_SESSION['error'] . '</div>';
+            unset($_SESSION['error']); // Clear the error after displaying it
+        }
+        ?>
     </div>
 
     <footer class="mt-auto py-3  text-white">
