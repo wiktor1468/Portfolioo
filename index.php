@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Portfolio</title>
-    <!-- Odwołanie do CSS i bootsrapa -->
+    <!-- CSS and Bootstrap links -->
     <link href='style.css' rel='stylesheet'>
     <link href='header.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" 
@@ -13,28 +13,19 @@
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     
     <script>
-         function moveDown() {
-         // Get the height of the viewport
-         var windowHeight = window.innerHeight*0.86;
-        // Scroll down by the height of the viewport
-        window.scrollBy({ top: windowHeight, behavior: 'smooth' });
-         }
+        function moveDown() {
+            var windowHeight = window.innerHeight * 0.86;
+            window.scrollBy({ top: windowHeight, behavior: 'smooth' });
+        }
     </script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-   
 </head>
 
 <body>
     <?php
-// We need to use sessions, so you should always start sessions using the below code.
-session_start();
-// If the user is not logged in redirect to the login page...
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.php'); //!!!!
-	exit;
-}
-?>
+    session_start();
+    ?>
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -75,34 +66,35 @@ if (!isset($_SESSION['loggedin'])) {
                             <img src="assets/circle-linkedin.webp" alt="LinkedIn" class="img-fluid github-icon">
                         </a>
                     </li>
+                    <?php if (isset($_SESSION['loggedin'])): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">
                             <img src="assets/logout_image.png" alt="" class="img-fluid github-icon">
                         </a>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="content">
-			
-			<p>Welcome back, <?=htmlspecialchars($_SESSION['name'], ENT_QUOTES)?>!</p>
-		</div>
 
-    
+    <div class="content">
+        <?php if (isset($_SESSION['loggedin'])): ?>
+            <p>Welcome back, <?=htmlspecialchars($_SESSION['name'], ENT_QUOTES)?>!</p>
+        <?php else: ?>
+            <p>Welcome to my portfolio! Please <a  class="nav-link d-inline p-0" href="login.php">login</a> to access more features.</p>
+        <?php endif; ?>
+    </div>
 
     <header>
         <div class="header-content container-fluid">
-            
             <h1 id="imie"> Wiktor Łabno - portfolio</h1>     
-        
             <div class="rounded-circle image-div">
                 <img src="assets/face1to1.jpg" class="img-fluid" alt="Face">
             </div>
         </div>
     </header>
 
-    
     <div class="text-content b-0">
         <p id="des">I’m interested in Computer Science and I’m willing to take new advantage </p>
     </div>
@@ -120,8 +112,6 @@ if (!isset($_SESSION['loggedin'])) {
             </div>
         </div>
     </div>
-
-      
 
     <main class="container-fluid">
         <div class="recent-work">
@@ -141,27 +131,20 @@ if (!isset($_SESSION['loggedin'])) {
                 </div>
             </div>
         </div>
-
-      
-        
-
-        
     </main>
 
     <div class="container">
         <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Featured</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Portfolio</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Log in</a></li>
-           
-          </ul>
-          <p class="text-center text-muted">&copy; 2024 Wiktor Łabno</p>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Featured</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Portfolio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Log in</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2024 Wiktor Łabno</p>
         </footer>
-      </div>
-    
+    </div>
 </body>
 
 </html>
