@@ -26,10 +26,19 @@
 </head>
 
 <body>
+    <?php
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: index.php'); //!!!!
+	exit;
+}
+?>
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand pr-5" href="index.html">
+            <a class="navbar-brand pr-5" href="index.php">
                 <img src="assets/logo.png" alt="Logo" class="img-fluid rounded-circle logo-icon">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,11 +75,19 @@
                             <img src="assets/circle-linkedin.webp" alt="LinkedIn" class="img-fluid github-icon">
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">
+                            <img src="assets/logout_image.png" alt="" class="img-fluid github-icon">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    <div class="content">
+			
+			<p>Welcome back, <?=htmlspecialchars($_SESSION['name'], ENT_QUOTES)?>!</p>
+		</div>
 
     
 

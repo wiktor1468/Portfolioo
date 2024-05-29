@@ -41,7 +41,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM uzytkownicy WHERE username =
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            echo 'Welcome back, ' . htmlspecialchars($_SESSION['name'], ENT_QUOTES) . '!';
+            header('Location: index.php');
         } else {
             $_SESSION['error'] = 'Incorrect username and/or password!';
             header('Location: login.php');

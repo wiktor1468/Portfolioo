@@ -17,7 +17,7 @@
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand pr-5" href="index.html">
+            <a class="navbar-brand pr-5" href="index.php">
                 <img src="assets/logo.png" alt="Logo" class="img-fluid rounded-circle logo-icon">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
