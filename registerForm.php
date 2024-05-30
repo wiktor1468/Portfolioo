@@ -29,6 +29,10 @@
                 <label for="password">Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
+            <div class="form-group w-25 mx-auto">
+                <label for="password2">Repeat Password</label>
+                <input type="password" class="form-control" name="password2" placeholder="Password">
+            </div>
             <div class="w-25 mx-auto">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

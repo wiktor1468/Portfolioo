@@ -43,6 +43,13 @@ if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 8) {
     header('Location: registerForm.php');
     exit;
 }
+//pass comparsion
+if($_POST['password']!=$_POST['password2']){
+	$_SESSION['error'] = 'Passwords must be the same';
+    header('Location: registerForm.php');
+    exit;
+}
+
 
 
 //check if the account with that username exists.
