@@ -36,6 +36,13 @@
         <small id="emailHelp" class="form-text text-muted">
             <a class="nav-link" href="login.php">I already have an account</a>
         </small>
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+            echo '<div class="alert alert-danger w-25 mx-auto mt-3">' . $_SESSION['error'] . '</div>';
+            unset($_SESSION['error']); // Clear the error after displaying it
+        }
+        ?>
         
     </div>
 </body></html>

@@ -11,57 +11,67 @@ if ( mysqli_connect_errno() ) {
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-// Now we check if the data was submitted, isset() function will check if the data exists.
+//if submitted, isset() - check if exists.
 if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
-	// Could not get the data that should have been sent.
-	exit('Please complete the registration form!');
+	$_SESSION['error'] = 'Could not get the data that should have been sent';
+    header('Location: registerForm.php');
+    exit;
 }
 // Make sure the submitted registration values are not empty.
 if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
-	// One or more values are empty.
-	exit('Please complete the registration form');
+	$_SESSION['error'] = 'Please complete all rows';
+    header('Location: registerForm.php');
+    exit;
 }
 
 //VALIDATION
 
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-	exit('Email is not valid!');
+	$_SESSION['error'] = 'Invalid email';
+            header('Location: registerForm.php');
+            exit;
 }
 //username
 if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
-    exit('Username is not valid!');
+    $_SESSION['error'] = 'Invalid username, use only alphanumerical!';
+            header('Location: registerForm.php');
+            exit;
 }
 //pass
-if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
-	exit('Password must be between 5 and 20 characters long!');
+if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 8) {
+	$_SESSION['error'] = 'Password must be between 8 and 20 characters long';
+    header('Location: registerForm.php');
+    exit;
 }
 
 
-// We need to check if the account with that username exists.
+//check if the account with that username exists.
 if ($stmt = $con->prepare('SELECT id, password FROM uzytkownicy WHERE username = ?')) {
-	// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
 	$stmt->store_result();
 	if ($stmt->num_rows > 0) {
 		// Username already exists
-		echo 'Username exists, please choose another!';
+		$_SESSION['error'] = 'Username already exists';
+    	header('Location: registerForm.php');
+   
 	} else {
-		// Username doesn't exists, insert new account
         if ($stmt = $con->prepare('INSERT INTO uzytkownicy (username, password, email) VALUES (?, ?, ?)')) {
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // hash the password
             $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
             $stmt->execute();
-            echo 'You have successfully registered! You can now login!';
+			//prepare
+            header('Location: registerSucces.html');
 } else {
-	// Something is wrong with the SQL statement, so you must check to make sure your accounts table exists with all three fields.
-	echo 'Could not prepare statement!';
+	
+	$_SESSION['error'] = 'Could not prepare a statement';
+    	header('Location: registerForm.php');
 }
 	}
 	$stmt->close();
 } else {
-	// Something is wrong with the SQL statement, so you must check to make sure your accounts table exists with all 3 fields.
-	echo 'Could not prepare statement!';
+	$_SESSION['error'] = 'Could not prepare a statement';
+    	header('Location: registerForm.php');
 }
 $con->close();
 ?>

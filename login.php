@@ -74,7 +74,7 @@
             </div>
         </form>
         <small id="emailHelp" class="form-text text-muted">
-            <a class="nav-link" href="register.html">Sign in if you don't have an account</a>
+            <a class="nav-link" href="registerForm.php">Sign in if you don't have an account</a>
         </small>
         <?php
         session_start();
