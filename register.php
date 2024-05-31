@@ -7,7 +7,6 @@ $DATABASE_NAME = 'portfolio';
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
-	// If there is an error with the connection, stop the script and display the error.
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
@@ -17,12 +16,13 @@ if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
     header('Location: registerForm.php');
     exit;
 }
-// Make sure the submitted registration values are not empty.
+//registration values arent empty
 if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
 	$_SESSION['error'] = 'Please complete all rows';
     header('Location: registerForm.php');
     exit;
 }
+
 
 //VALIDATION
 
@@ -44,7 +44,7 @@ if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 8) {
     exit;
 }
 //pass comparsion
-if($_POST['password']!=$_POST['password2']){
+if($_POST['password'] != $_POST['password2']){
 	$_SESSION['error'] = 'Passwords must be the same';
     header('Location: registerForm.php');
     exit;
@@ -67,7 +67,6 @@ if ($stmt = $con->prepare('SELECT id, password FROM uzytkownicy WHERE username =
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // hash the password
             $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
             $stmt->execute();
-			//prepare
             header('Location: registerSucces.html');
 } else {
 	

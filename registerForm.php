@@ -11,6 +11,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" 
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+
+    <!-- Script to use required property -->
+    <script>
+        function validateForm() {
+            var checkbox = document.getElementById("GFG");
+ 
+            if (!checkbox.checked) {
+                // If checkbox is not checked, prevent form submission
+                document.getElementById("sudo").innerHTML = 
+                      "Checkbox is required!";
+                return false;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -33,6 +47,11 @@
                 <label for="password2">Repeat Password</label>
                 <input type="password" class="form-control" name="password2" placeholder="Password">
             </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="flexCheckDefault" required>
+                <label class="form-check-label" for="flexCheckDefault">I have read the terms</label>
+            </div>
+            <br></br>
             <div class="w-25 mx-auto">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
