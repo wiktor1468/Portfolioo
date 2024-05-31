@@ -15,7 +15,7 @@
     <!-- Script to use required property -->
     <script>
         function validateForm() {
-            var checkbox = document.getElementById("GFG");
+            var checkbox = document.getElementById("flexCheckDefault");
  
             if (!checkbox.checked) {
                 // If checkbox is not checked, prevent form submission
