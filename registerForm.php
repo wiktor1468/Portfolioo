@@ -13,6 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
 
     <!-- Script to use required property -->
+    <!-- I use js to prevent provided data from cleaning while chceckox is not clicked -->
     <script>
         function validateForm() {
             var checkbox = document.getElementById("flexCheckDefault");

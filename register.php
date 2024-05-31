@@ -7,7 +7,7 @@ $DATABASE_NAME = 'portfolio';
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
-	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+	 throw new Exception("Error Processing Request", 1);
 }
 
 //if submitted, isset() - check if exists.
@@ -22,6 +22,7 @@ if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['emai
     header('Location: registerForm.php');
     exit;
 }
+
 
 
 //VALIDATION
@@ -48,6 +49,19 @@ if($_POST['password'] != $_POST['password2']){
 	$_SESSION['error'] = 'Passwords must be the same';
     header('Location: registerForm.php');
     exit;
+}
+//check if the account with that email exists.
+if ($stmt = $con->prepare('SELECT id, password FROM uzytkownicy WHERE email = ?')) {
+	$stmt->bind_param('s', $_POST['email']);
+	$stmt->execute();
+	$stmt->store_result();
+	if ($stmt->num_rows > 0) {
+		// Username already exists
+		$_SESSION['error'] = 'This email is already in use';
+    	header('Location: registerForm.php');
+		exit;
+   
+	}
 }
 
 
