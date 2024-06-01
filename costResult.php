@@ -44,7 +44,7 @@
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="costs.html">Calculator</a>
+                        <a class="nav-link" href="costs.html">Cost calculator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -78,73 +78,46 @@
         </div>
     </nav>
 
-    <div class="content">
-        <?php if (isset($_SESSION['loggedin'])): ?>
-            <p>Welcome back, <?=htmlspecialchars($_SESSION['name'], ENT_QUOTES)?>!</p>
+    <body>
+    <div class="container mt-5">
+        <h1 class="text-center">Project Cost Estimation</h1>
+        <?php if (isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger">
+                <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+            </div>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['project_name'])): ?>
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>Project Name:</strong> <?php echo $_SESSION['project_name']; ?></p>
+                    <p><strong>Developer Level:</strong> <?php echo $_SESSION['developer_level']; ?></p>
+                    <p><strong>Project Complexity:</strong> <?php echo $_SESSION['project_complexity']; ?></p>
+                    <p><strong>Estimated Development Hours:</strong> <?php echo $_SESSION['hours']; ?></p>
+                    <h3><strong>Total Cost:</strong> PLN<?php echo number_format($_SESSION['total_cost'], 2); ?></h3>
+                </div>
+            </div>
+            <?php 
+                // Clear session data after displaying
+                session_unset();
+                session_destroy();
+            ?>
         <?php else: ?>
-            <p>Welcome to my portfolio! Please <a  class="nav-link d-inline p-0" href="login.php">login</a> to access more features.</p>
+            <div class="alert alert-warning">No project data available.</div>
         <?php endif; ?>
     </div>
-
-    <header>
-        <div class="header-content container-fluid">
-            <h1 id="imie"> Wiktor Łabno - portfolio</h1>     
-            <div class="rounded-circle image-div">
-                <img src="assets/face1to1.jpg" class="img-fluid" alt="Face">
-            </div>
-        </div>
-    </header>
-
-    <div class="text-content b-0">
-        <p id="des">I’m interested in Computer Science and I’m willing to take new advantage </p>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-2">
-                <button id="arrow_down" onclick="moveDown()" title="Press to move down" class="border-0 h-50">
-                    <div class="container d-flex justify-content-center rounded-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle svg-container" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
-                        </svg>
-                    </div>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <main class="container-fluid">
-        <div class="recent-work">
-            <h2>My Recent Work</h2>
-            <div class="image-container row">
-                <div class="image-item col-md-4">
-                    <img src="assets/systemRekomendacji.png" class="img-fluid" alt="Image ">
-                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
-                </div>
-                <div class="image-item col-md-4">
-                    <img src="assets/tit.png" id="titanic" class="img-fluid" alt="Image ">
-                    <p><a href="https://github.com/wiktor1468">Titanic</a></p>
-                </div>
-                <div class="image-item col-md-4">
-                    <img src="assets/systemRekomendacji.png" class="img-fluid" alt="Image ">
-                    <p><a href="https://github.com/wiktor1468">System Rekomendacji</a></p>
-                </div>
-            </div>
-        </div>
-    </main>
+    <br></br><br></br><br></br>
 
     <div class="container">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
-                
-                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
-                <li class="nav-item"><a href="costs.php" class="nav-link px-2 text-muted">Calculator</a></li>
-                <li class="nav-item"><a href="login.php" class="nav-link px-2 text-muted">Log in</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Featured</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Portfolio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Log in</a></li>
             </ul>
             <p class="text-center text-muted">&copy; 2024 Wiktor Łabno</p>
         </footer>
     </div>
 </body>
-
 </html>

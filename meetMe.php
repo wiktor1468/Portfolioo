@@ -61,20 +61,50 @@
 
 
 
-    <h1>Schedule a Meeting</h1>
-    <form id="meeting-form">
-        <label for="meeting-date">Select Date:</label>
-        <input type="date" id="meeting-date" name="meeting-date" required>
+    <body>
+    <div class="container">
+        <h1>Sign Up for a Meeting</h1>
+        <img src="calendar.jpg" alt="Calendar" class="calendar-img">
+        <form id="meetingForm">
+            <div class="form-group">
+                <label for="meetingDate">Meeting Date</label>
+                <input type="date" id="meetingDate" name="meetingDate" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </div>
 
-        <label for="meeting-time">Select Time:</label>
-        <input type="time" id="meeting-time" name="meeting-time" required>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const email = urlParams.get('email');
 
-        <button type="submit">Schedule Meeting</button>
-    </form>
+        document.getElementById('meetingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    <h2>Meeting Calendar</h2>
-    <div id="calendar"></div>
-    
-    <script src="js/calendar.js"></script>
+            const meetingDate = document.getElementById('meetingDate').value;
+
+            const data = { username, email, meetingDate };
+
+            fetch('submit.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Meeting sign-up successful!');
+                } else {
+                    alert('There was an error signing up for the meeting.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
     
 </body>
