@@ -37,9 +37,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="meetMe.php">Meet me</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
@@ -48,6 +46,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meetMe.php">Meets</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">

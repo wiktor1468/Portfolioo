@@ -64,7 +64,7 @@
     <body>
     <div class="container">
         <h1>Sign Up for a Meeting</h1>
-        <img src="calendar.jpg" alt="Calendar" class="calendar-img">
+
         <form id="meetingForm">
             <div class="form-group">
                 <label for="meetingDate">Meeting Date</label>
@@ -106,5 +106,18 @@
             });
         });
     </script>
+    <br></br><br></br>
+     <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
+                
+                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
+                <li class="nav-item"><a href="costs.php" class="nav-link px-2 text-muted">Calculator</a></li>
+                <li class="nav-item"><a href="login.php" class="nav-link px-2 text-muted">Log in</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2024 Wiktor Łabno</p>
+        </footer>
+    </div>
     
 </body>
