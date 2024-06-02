@@ -37,17 +37,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="meetMe.php">Meet me</a>
-                    </li>
-                    <li class="nav-item">
+                <li class="nav-item">
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="costs.html">Cost calculator</a>
+                        <a class="nav-link" href="costs.html">Calculator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meetMe.php">Meets</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -110,11 +110,10 @@
     <div class="container">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Featured</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Portfolio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Log in</a></li>
+                <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-muted">Contact</a></li>
+                <li class="nav-item"><a href="costs.php" class="nav-link px-2 text-muted">Calculator</a></li>
+                <li class="nav-item"><a href="login.php" class="nav-link px-2 text-muted">Log in</a></li>
             </ul>
             <p class="text-center text-muted">&copy; 2024 Wiktor Łabno</p>
         </footer>

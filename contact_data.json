@@ -62,3 +62,19 @@
     "attachment": null,
     "timestamp": "2024-06-02 16:23:42"
 }
+{
+    "name": "Wiktor",
+    "phone": "123123123",
+    "email": "el@zimeil.pl",
+    "message": "witam i pozdrawiam",
+    "attachment": null,
+    "timestamp": "2024-06-02 17:09:49"
+}
+{
+    "name": "Wiktor",
+    "phone": "123456456",
+    "email": "wiktorhar@gmail.com",
+    "message": "Witam i pozdrawiam u\u017cytkownika",
+    "attachment": null,
+    "timestamp": "2024-06-02 17:20:46"
+}
