@@ -45,7 +45,7 @@
                         <a class="nav-link" href="costs.html">Calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="meetMe.php">Meets</a>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="image-item col-md-4">
                     <img src="assets/tit.png" id="titanic" class="img-fluid" alt="Image ">
-                    <p><a href="https://github.com/wiktor1468">Titanic</a></p>
+                    <p><a href="https://github.com/wiktor1468/TitanicNeuralNetwork">Titanic</a></p>
                 </div>
                 <div class="image-item col-md-4">
                     <img src="assets/systemRekomendacji.png" class="img-fluid" alt="Image ">
@@ -139,7 +139,7 @@
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
                 
-                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
+                <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-muted">Contact</a></li>
                 <li class="nav-item"><a href="costs.php" class="nav-link px-2 text-muted">Calculator</a></li>
                 <li class="nav-item"><a href="login.php" class="nav-link px-2 text-muted">Log in</a></li>
             </ul>

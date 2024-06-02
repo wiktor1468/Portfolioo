@@ -75,7 +75,7 @@
         
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>                
-                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
+                <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-muted">Contact</a></li>
                 <li class="nav-item"><a href="costs.php" class="nav-link px-2 text-muted">Calculator</a></li>
                 <li class="nav-item"><a href="login.php" class="nav-link px-2 text-muted">Log in</a></li>
             </ul>

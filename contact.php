@@ -11,17 +11,66 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     
-    <script>
-        function moveDown() {
-            var windowHeight = window.innerHeight * 0.86;
-            window.scrollBy({ top: windowHeight, behavior: 'smooth' });
-        }
-    </script>
-
+   
 </head>
 <body>
+<?php
+        session_start();
+?>
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand pr-5" href="index.php">
+                <img src="assets/logo.png" alt="Logo" class="img-fluid rounded-circle logo-icon">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="costs.html">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meetMe.php">Meets</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/wiktor1468">
+                            <img src="assets/github-mark-white.png" alt="GitHub" class="img-fluid github-icon">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:wiktorhar@gmail.com">
+                            <img src="assets/gmail-icon-png.png" alt="Gmail" class="img-fluid gmail-icon">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.linkedin.com/in/wiktor-labno-0018082a4/?trk=opento_sprofile_goalscard">
+                            <img src="assets/circle-linkedin.webp" alt="LinkedIn" class="img-fluid github-icon">
+                        </a>
+                    </li>
+                    <?php if (isset($_SESSION['loggedin'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">
+                            <img src="assets/logout_image.png" alt="" class="img-fluid github-icon">
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
     <section id="contactForm" class="container mt-5">
-        <h2>Contact Us</h2>
+        <h2>Contact Me</h2>
         <form action="submitContact.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -47,7 +96,7 @@
         </form>
 
         <?php
-        session_start();
+        
         if (isset($_SESSION['feedback'])) {
             echo '<div class="alert alert-info mt-3 text-center d-flex" id="feedbackContact">' . $_SESSION['feedback'] . '</div>';
             unset($_SESSION['feedback']); // Clear the feedback after displaying it

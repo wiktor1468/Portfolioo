@@ -14,6 +14,9 @@
 </head>
 
 <body>
+<?php
+        session_start();
+?>
 
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -25,17 +28,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
+                <li class="nav-item">
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        <a class="nav-link" href="costs.html">Calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meetMe.php">Meets</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -62,62 +65,72 @@
 
 
     <body>
-    <div class="container">
-        <h1>Sign Up for a Meeting</h1>
-
-        <form id="meetingForm">
+    <div class="container mt-5">
+        <h2>Schedule a Meeting</h2>
+        
+        <form action="scheduleMeeting.php" method="post">
             <div class="form-group">
-                <label for="meetingDate">Meeting Date</label>
-                <input type="date" id="meetingDate" name="meetingDate" required>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
             </div>
-            <button type="submit" class="submit-btn">Sign Up</button>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time</label>
+                <select id="time" name="time" class="form-control" required>
+                    <option value="" disabled selected>Select a time</option>
+                    <option value="08:00">08:00</option>
+                    <option value="08:30">08:30</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Schedule Meeting</button>
+
+            <?php
+        if (isset($_SESSION['feedback'])) {
+            echo '<div class="alert alert-info mt-3 text-center">' . $_SESSION['feedback'] . '</div>';
+            unset($_SESSION['feedback']); // Clear the feedback after displaying it
+        }
+        ?>
         </form>
     </div>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const username = urlParams.get('username');
-        const email = urlParams.get('email');
-
-        document.getElementById('meetingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const meetingDate = document.getElementById('meetingDate').value;
-
-            const data = { username, email, meetingDate };
-
-            fetch('submit.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Meeting sign-up successful!');
-                } else {
-                    alert('There was an error signing up for the meeting.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
-    <br></br><br></br>
-     <div class="container">
-        <footer class="py-3 my-4">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <footer class="py-3 my-4">
+        <div class="container">
+        
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
-                
-                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
+                <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>                
+                <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-muted">Contact</a></li>
                 <li class="nav-item"><a href="costs.php" class="nav-link px-2 text-muted">Calculator</a></li>
                 <li class="nav-item"><a href="login.php" class="nav-link px-2 text-muted">Log in</a></li>
             </ul>
             <p class="text-center text-muted">&copy; 2024 Wiktor Łabno</p>
-        </footer>
-    </div>
+        
+        </div>
+    </footer>
     
 </body>
