@@ -229,6 +229,10 @@ td{
     flex-grow:auto;
     
 }
+#feedbackContact{
+    text-align: center;
+    display: block;
+}
 
 #contactForm label {
     width: 2px;
