@@ -12,12 +12,7 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     
-    <script>
-        function moveDown() {
-            var windowHeight = window.innerHeight * 0.86;
-            window.scrollBy({ top: windowHeight, behavior: 'smooth' });
-        }
-    </script>
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </head>

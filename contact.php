@@ -15,6 +15,8 @@
 </head>
 <body>
 <?php
+//It must be on every page you intend to use.
+// The variables contained in the session are set with $_SESSION, a global variable
         session_start();
 ?>
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">

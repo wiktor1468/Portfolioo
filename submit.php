@@ -1,4 +1,8 @@
+
 <?php
+//FEATURE IN BUILD
+// Provided message will be send to db
+// Logged user won't have to fill email and username labels
 header('Content-Type: application/json');
 
 $servername = "localhost";

@@ -57,6 +57,17 @@
                             <img src="assets/circle-linkedin.webp" alt="LinkedIn" class="img-fluid github-icon">
                         </a>
                     </li>
+                
+                    </li>
+                    <?php 
+                    //logout button displayed only when user is logged
+                    if (isset($_SESSION['loggedin'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">
+                            <img src="assets/logout_image.png" alt="" class="img-fluid github-icon">
+                        </a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
